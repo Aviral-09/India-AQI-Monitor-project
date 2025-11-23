@@ -9,6 +9,9 @@ from city_loader import get_all_cities, get_coords
 from aqi_api import fetch_aqi_history
 from utils import safe_value, get_aqi_category, get_aqi_color, health_recommendation
 
+LINKEDIN_URL = "https://www.linkedin.com/in/aviral-64702a291"
+
+
 # --- Page Config ---
 st.set_page_config(
     page_title="AQI Monitor",
@@ -83,8 +86,24 @@ st.markdown("""
 if 'selected_city' not in st.session_state:
     st.session_state['selected_city'] = "New Delhi"
 
+# --- Header with LinkedIn Icon ---
+st.markdown(
+    f'''
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 20px;">
+        <h1 style="margin:0; font-size: 2.5rem;">India AQI Analyzer 🇮🇳</h1>
+        <a href="{LINKEDIN_URL}" target="_blank" style="text-decoration:none;">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                 alt="LinkedIn"
+                 style="width:32px;height:32px;">
+        </a>
+    </div>
+    ''',
+    unsafe_allow_html=True
+)
+
 # --- Sidebar ---
 st.sidebar.title("AQI Monitor")
+
 
 # City Selection
 cities = get_all_cities()
