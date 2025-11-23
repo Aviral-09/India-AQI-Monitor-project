@@ -26,6 +26,12 @@ st.markdown("""
         color: #FAFAFA;
     }
     
+    /* Hide Streamlit Toolbar and GitHub Button */
+    .stAppDeployButton {display:none;}
+    [data-testid="stToolbar"] {visibility: hidden !important;}
+    footer {visibility: hidden !important;}
+
+    
     /* Sidebar */
     [data-testid="stSidebar"] {
         background-color: #021a1a;
