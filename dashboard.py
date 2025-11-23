@@ -363,4 +363,4 @@ with col_right:
 
 # Footer
 st.markdown("---")
-st.markdown("Built with ❤️ using Python & Streamlit | Data Source: Open-Meteo")
+
